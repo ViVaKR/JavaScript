@@ -4,7 +4,7 @@
 
 // 5 - (1)
 function mul(a, b) {
-    return a * b; 
+    return a * b;
 }
 
 // 4 - (2)
@@ -29,3 +29,28 @@ function sum(a, b) {
 console.log(sum(12, 45));
 
 // 0 - `index.js` : 프로그램 시작 및 종료 지점
+
+
+const sample = [1, 2, 3];
+
+//! reduce
+//-> 핵심 4개의 인자
+//-> 누산기 (acc : accumulator) 
+//-> 현재값 (cur : currentValue)
+//-> 현재 인덱스 (idx : index)
+//-> 원본 배열 (src)
+let result = sample.reduce((acc, cur) => {
+    acc.push(cur ** 2); // 거듭제곱 
+    return acc;
+}, []);
+
+console.log(result);
+console.log(sample);
+
+const arr = [1, 2, 3, 4];
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = arr.reduce((acc, cur) => acc + cur, initialValue);
+
+console.log(sumWithInitial)
+alert(sumWithInitial)
