@@ -1,6 +1,7 @@
 # JavaScript
 
 ## [What is JavaScript](https://developer.mozilla.org/ko/docs/Learn/JavaScript/First_steps/What_is_JavaScript)
+
 - A technology that we use to create websites
 - Giving instructions to a computer.
 - The Computer follows our instructions.
@@ -12,13 +13,15 @@
 - 웹페이지 수정
 
 ## Start
-1. Install Web Browser 
+
+1. Install Web Browser
 
 ## [Test Site](supersimple.dev/js-basics)
 
 ## [BootCamp](bootcamp.js)
 
 ## Syntax (구문)
+
 - 프로그래밍 준수 규칙
 - 문법 (grammar)
 
@@ -37,3 +40,10 @@
    5. HTMLMediaElement
    6. WebRTC
 2. Third-Paty API
+
+## Safari
+
+- 요소검사 : `Option + Command + i`
+- `clear();`
+- `console`
+- 
