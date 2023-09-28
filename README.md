@@ -46,4 +46,5 @@
 - 요소검사 : `Option + Command + i`
 - `clear();`
 - `console`
-- 
+
+## [(YouTube Ref) Modern JavaScript From The Beginning, Traversy Media](https://youtu.be/BI1o2H9z9fo?si=D2QlyCyVjzxmW9mA)
