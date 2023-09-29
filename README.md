@@ -43,8 +43,45 @@
 
 ## Safari
 
-- 요소검사 : `Option + Command + i`
-- `clear();`
-- `console`
+## Execution Context
+>
+> JavaScript를 실행하면 코드 변환 및 실행을 처리하기 위한 특수 환경이 생성됩니다.  
+> 이것을 실행 컨텍스트라고 합니다.  
+> 여기에는 현재 실행 중인 코드와 실행에 도움이 되는 모든 것이 포함되어 있습니다.  
+> 호출된 모든 함수에 대한 함수 실행 컨텍스트뿐만 아니라 전역 실행 컨텍스트도 있습니다.  
 
+## Execution Context Phases
+
+- Memory Creation Phase 메모리 생성 단계:
+   1. Create the global object (brower = window, Node.js = global)
+   2. Create the 'this' object and bind it to the global object
+   3. Setup memory heap for storing variables and function references
+   4. Store functions and variables in global execution context and set to "undefined"
+- Execution Phase 실행 단계:
+   1. Execute code line by line
+   2. Create a new execution context for each function call
+
+---
+
+## The Call Stack
+
+- Stack of functions to be executed
+- Manages execution contexts
+- Stacks are LIFO last in first out
+
+---
+
+`-----------------`  
+third()  
+`-----------------`  
+second()  
+`-----------------`  
+first()  
+`-----------------`  
+Global EC  
+`-----------------`  
+CALL STACK  
+`-----------------`  
+
+---
 ## [(YouTube Ref) Modern JavaScript From The Beginning, Traversy Media](https://youtu.be/BI1o2H9z9fo?si=D2QlyCyVjzxmW9mA)
