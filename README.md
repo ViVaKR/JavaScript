@@ -84,4 +84,20 @@ CALL STACK
 `-----------------`  
 
 ---
+
+## ECMAScript Editions
+
+- ES1 : ECMAScript 1 (1997), The Original JavaScript
+- ES2 : ECMAScript 2 (1998), The Original JavaScript
+- ES3 : ECMAScript 3 (1999), The Original JavaScript
+- ES4 : ECMAScript Never Released
+- ES5 : ECMAScript 2009, The First Main Revision
+- ES6 : ECMAScript 2015, The Second Revision
+- ECMAScript 2016
+- ECMAScript 2017
+- ECMAScript 2017
+- ECMAScript 2018
+- ECMAScript 2019
+- ECMAScript 2020
+
 ## [(YouTube Ref) Modern JavaScript From The Beginning, Traversy Media](https://youtu.be/BI1o2H9z9fo?si=D2QlyCyVjzxmW9mA)
