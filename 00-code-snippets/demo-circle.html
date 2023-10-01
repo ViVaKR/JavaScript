@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <style>
+      body {
+        font-family: 'Segoe UI', 'IBM Plex Sans KR', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 3em;
+      }
+    </style>
+
+    <!-- 자바스크립트 코드 파트 -->
+    <script>
+      // 자동으로 발생하는 이벤트...,
+      // 웹 페이지에서 자동으로 가장 먼저 발생하는 이벤트
+      window.onload = () => {
+        // 계산후 결과 문자를 넣을 태그를 변수에 담아두기...
+        // var 변수는 가급적 사용하지 않기 : let 과 const 만 사용하기
+        const divTitle = document.getElementById('title');
+        const divArea = document.getElementById('divArea');
+        const divLength = document.getElementById('divLength');
+
+        // 위에서 캡처한 태그를 초기화 하기
+        divTitle.innerHTML = 'Demo </br></br>'; // 제목은 바로 넣음...
+        divArea.innerHTML = null; // 넓이를 넣을 곳
+        divLength.innerHTML = null; // 둘레를 넣을 곳 초기화
+
+        // 넓이 구하는 함수
+        function get_area(r) {
+          const result = r * r * 3.14;
+          return result;
+        }
+
+        // 둘레를 구하는 함수
+        function get_length(r) {
+          const result = r * 2 * 3.14;
+          return result;
+        }
+
+        // 반지름
+        const radius = 40;
+
+        // 넓이를 구하는 함수를 콜한 후
+        // 리턴된 값을 담아 둘 변수
+        // 함수 콜
+        const area = get_area(radius);
+
+        // 둘레를 구하는 함수를 콜한 후
+        // 리턴된 값을 담아 둘 변수
+        const length = get_length(radius);
+
+        // 웹 페이지에 기록하기 : 넓이
+        divArea.innerHTML = `반지름 ${radius} 인 원의 부피는 => ${new Intl.NumberFormat('ko-KR').format(area)}`;
+
+        // 웹 페이지에 기록하기 : 둘레
+        divLength.innerHTML = `반지름 ${radius} 인 원의 넓이는 =>  ${new Intl.NumberFormat('ko-KR').format(length)}`;
+      };
+    </script>
+    <title>Demo</title>
+  </head>
+  <!-- 우리 눈에 보이는 바디 부분 -->
+  <body>
+    <!-- 제목 부분 -->
+    <div id="title"></div>
+
+    <!-- 넓이 부분 -->
+    <div id="divArea"></div>
+
+    <!-- 둘레 부분 -->
+    <div id="divLength"></div>
+  </body>
+
+  <!-- 끝나는 파트 -->
+</html>

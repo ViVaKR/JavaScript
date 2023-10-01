@@ -1,0 +1,123 @@
+{
+    "Viv Console Log Variables": {
+        "prefix": "vClv",
+        "body": [
+            "console.log(`${${1:var}}$2`)$0"
+        ],
+        "description": "Interpolation Console"
+    },
+    "Viv Random Number": {
+        "prefix": "vRnd",
+        "body": "const ${1:rnd} = Math.floor(Math.random() * ${2:100} + ${3:1});$0",
+        "description": "Create Random Number"
+    },
+    "Viv ForEach": {
+        "prefix": "vForEach",
+        "body": [
+            "${1:items}.forEach(${2:x} => ${3:console.log(${2:x})});"
+        ],
+        "description": "ForEach"
+    },
+    "Viv If": {
+        "prefix": "vIf",
+        "body": [
+            "if (${1:true}) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "if statement"
+    },
+    "Viv Function": {
+        "prefix": "vFunc",
+        "body": [
+            "function ${1:fName}($2) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Function Standard"
+    },
+    "Viv For Loop Of": {
+        "prefix": "vForOf",
+        "body": [
+            "for (${1:const} ${2:item} of ${3:items}) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "For Of Loop"
+    },
+    "Viv For Loop i": {
+        "prefix": "vfori",
+        "body": [
+            "for (let ${1:i} = ${2:0}; ${1:i} <$3 ${4:10}; ${1:i}${5:++}) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "For i Loop"
+    },
+    "Viv Console Log": {
+        "prefix": "vcl",
+        "body": [
+            "console.log(${1:obj1}, ${2:obj2})$0"
+        ],
+        "description": "Console Log"
+    },
+    "Viv Do While Loop": {
+        "prefix": "vDoWhile",
+        "body": [
+            "do {",
+            "\t$0",
+            "} while (${1:condition});"
+        ],
+        "description": "Do While Loop"
+    },
+    "Viv Clear Console": {
+        "prefix": "vClear",
+        "body": [
+            "console.clear();$0"
+        ],
+        "description": "Console Clear"
+    },
+    "Viv Array String Sample": {
+        "prefix": "vArrs",
+        "body": [
+            "const items = [ 'book', 'table', 'chair', 'kite' ];$0"
+        ],
+        "description": "Array String Sample"
+    },
+    "Viv Array Number Sample": {
+        "prefix": "vArri",
+        "body": [
+            "const ${1:numbers} = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ${2:}];$0"
+        ],
+        "description": "Array Number Sample"
+    },
+    "Viv For of loop": {
+        "prefix": "vfof",
+        "body": [
+            "for (${1:const} ${2:item} of ${3:items})",
+            "{",
+            "\t$0",
+            "}"
+        ],
+        "description": "For of loop"
+    },
+    "Viv For in loop": {
+        "prefix": "vfoi",
+        "body": [
+            "for (${1:const} ${2:key} in ${3:object})",
+            "{",
+            "\t$0",
+            "}"
+        ],
+        "description": "For in loop"
+    },
+    "Viv Blank Line": {
+        "prefix": "vblank",
+        "body": [
+            "console.clear()",
+            "console.log('-----');",
+            "$0"
+        ],
+        "description": "Blank Line"
+    }
+}

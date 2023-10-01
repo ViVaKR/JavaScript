@@ -12,19 +12,6 @@
     3. JavaScript : Makes interactive
 - 웹페이지 수정
 
-## Start
-
-1. Install Web Browser
-
-## [Test Site](supersimple.dev/js-basics)
-
-## [BootCamp](bootcamp.js)
-
-## Syntax (구문)
-
-- 프로그래밍 준수 규칙
-- 문법 (grammar)
-
 ## API
 
 > 개발자가 직접 구현하기 어렵거나 불가능한 기능들을 미리 만들어서 제공하는 프로그램.
@@ -101,3 +88,7 @@ CALL STACK
 - ECMAScript 2020
 
 ## [(YouTube Ref) Modern JavaScript From The Beginning, Traversy Media](https://youtu.be/BI1o2H9z9fo?si=D2QlyCyVjzxmW9mA)
+
+## SandBox Git Clone
+
+`git clone git@github.com:bradtraversy/javascript-sandbox.git`
