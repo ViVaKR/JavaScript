@@ -50,27 +50,12 @@
 
 ---
 
-## The Call Stack
+## DOM (Document Object Medel)
 
-- Stack of functions to be executed
-- Manages execution contexts
-- Stacks are LIFO last in first out
-
----
-
-`-----------------`  
-third()  
-`-----------------`  
-second()  
-`-----------------`  
-first()  
-`-----------------`  
-Global EC  
-`-----------------`  
-CALL STACK  
-`-----------------`  
-
----
+- Programmin Interface for web/HTML elements
+- Structure that we can interact with via JavaScript
+- Includes tags, attributes, text nodes etc
+- Represented as a tree structure
 
 ## ECMAScript Editions
 
