@@ -1,0 +1,15 @@
+name: Viv
+age: 38
+major: ViVaKR
+ratio: '1:2'
+numbers: [1, 2, 3, 4, 5, 6]
+students:
+  - name: Mark
+    dvs: Math
+    age: 20
+  - name: Julie
+    dvs: Arts
+    age: 23
+  - name: Tommy
+    dvs: Music
+    age: 25

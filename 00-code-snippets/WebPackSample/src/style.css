@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'KoPub';
+  src: url('./KoPubWorld Dotum Bold.ttf') format('ttf'), url('./KoPubWorld Dotum Bold.ttf') format('ttf');
+  font-weight: 600;
+  font-style: bold;
+}
+.hello {
+  color: deepskyblue;
+  font-family: 'KoPub';
+  font-size: 10em;
+  /* background: no-repeat center url('./avata-bj.png'); */
+}
+
+/* 
+KoPubWorld Dotum Medium.
+*/
