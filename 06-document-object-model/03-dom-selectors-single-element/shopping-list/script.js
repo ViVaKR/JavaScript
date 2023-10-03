@@ -16,6 +16,24 @@ title.innerHTML = '<strong>Shopping List</strong>';
 
 // Change Style
 title.style.color = 'magenta';
-title.style.backgroundColor = 'darkgray';
+title.style.backgroundColor = 'black';
 title.style.padding = '20px';
 title.style.borderRadius = '10px';
+
+// document.querySelector()
+console.log(document.querySelector('h1'));
+console.log(document.querySelector('#app-title'));
+console.log(document.querySelector('.container'));
+console.log(document.querySelector('input[type="text"]'));
+console.log(document.querySelector('li:nth-child(2)').innerText);
+
+const seconItem = document.querySelector('li:nth-child(2)');
+seconItem.innerText = "Viv Juice";
+seconItem.style.color = 'red';
+
+// Use these methods on other elements
+const list = document.querySelector('ul');
+console.log(list);
+
+const firstItem = list.querySelector('li');
+firstItem.style.color = 'skyblue';
