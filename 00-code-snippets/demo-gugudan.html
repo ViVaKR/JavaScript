@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Traversing The DOM</title>
+</head>
+
+<body>
+    <div class="container">
+        <h3 id="gugudan">
+            </h1>
+            <div class="parent">
+            </div>
+    </div>
+
+    <script>
+
+        // 3. 시간 지연 효과 를 위한 함수
+        const rs = (n, i) => new Promise((resolve, reject) => setTimeout(() => resolve(n * i), 1000));
+
+        // 2. 
+        const run = async (target) => {
+            let title = document.getElementById('gugudan');
+            title.innerHTML = (`구구 ( ${target} 단 )</br>`);
+
+            for (let i = 1; i <= 9; i++) {
+                title.innerHTML += `${target} x ${i} = ${await rs(target, i)} -> ${(new Date().getSeconds())} 초</br>`;
+
+                console.log(`${target} x ${i} = ${await rs(target, i)}`, (new Date()).getSeconds() + ' 초');
+            }
+            return !confirm("그만 할까요?");
+        };
+
+        // 1. 콜
+        (async () => {
+
+            let isContinue = false;
+
+            do {
+                const dan = parseInt(prompt("몇 단을 진행하시겠습니까?"));
+                isContinue = await run(dan);
+
+                console.log("순서대로 실행 확인 용");
+            } while (isContinue)
+
+        })().then(() => { // 타스크 결과가 다 나온 후 처리 파트 (await 와 동일한 효과)
+            document.getElementById('gugudan').innerHTML += `( The End )</br>`;
+            console.log("( The End )");
+        });
+
+    </script>
+
+</body>
+
+</html>

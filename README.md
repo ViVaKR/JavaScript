@@ -72,6 +72,37 @@
 - ECMAScript 2019
 - ECMAScript 2020
 
+## DOM Node Types
+
+1. Element
+2. Arrt
+3. Text
+4. CDATASection
+5. EntityReference
+6. Entity
+7. ProcessingInstruction
+8. Commnet
+9. Document
+10. DocumentType
+11. DocumentFragment
+12. Notation
+
+## Promise
+
+> 자바스크립트는 싱글 스레드에서 발생할 수 있는 문제점이 있어서
+ 기본 적으로 비동적으로 처리 합니다.
+ 즉 특정 작업들은 해당 작업이 완료되기를 기다리지 않고
+ 바로 다음 코드를 수행해 버리는 자바스크립트의 특성’을 의미합니다.
+ 싱글인데, 동기식으로 작업을 하지 않고
+ 시간이 걸릴 만 한 것은 알아서 비동적으로 처리하는 것을 말함...
+
+>setTimeout 같은 경우가 대표적임
+ 해당 시간을 기다리지 않고 다음 으로 제어권을 넘겨 버림. 이에
+ 콜백 함수 로 이런 문제점을 처리하게 되는 데 대표적인 것이 promise 입니다.
+ 프로미스는 어떤 결과가 나온 후에 다음 작업을 진행하는 데 사용됩니다.
+ 즉, 비동 처리 문제점 : 결과가 나오지 않았는데, 다음으로 진행하는 것을
+ 원만하게 처리해 줌...
+
 ## [(YouTube Ref) Modern JavaScript From The Beginning, Traversy Media](https://youtu.be/BI1o2H9z9fo?si=D2QlyCyVjzxmW9mA)
 
 ## SandBox Git Clone
