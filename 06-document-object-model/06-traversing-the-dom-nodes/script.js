@@ -30,4 +30,22 @@ output = parent.childNodes[5].style.color = 'green';
 output = parent.childNodes[7].innerText = 'Child Three';
 output = parent.childNodes[7].style.color = 'orange';
 
+output = parent.childNodes;
+parent.lastChild.textContent = 'Hello World';
+
+output = parent.firstChild;
+output = parent.lastChild;
+
+// parent node
+const child = document.querySelector('.child');
+output = child.parentElement;
+
+child.parentNode.style.padding = '10px';
+
+// Siblings
+const secondItem = document.querySelector('.child:nth-child(2)');
+output = secondItem;
+output = secondItem.nextSibling;
+output = secondItem.previousElementSibling;
+
 console.log(output);
