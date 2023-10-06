@@ -43,6 +43,12 @@
 //   });
 // });
 
+/* 
+  ! insert -> in html header part -> defer
+  <!-- Use `defer` when you put script in head -->
+  <script src="./script.js" defer></script>
+*/
+
 // Same Results
 document.querySelector('h1').innerText = 'Title';
 
