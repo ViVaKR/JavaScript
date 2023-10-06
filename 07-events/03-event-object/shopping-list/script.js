@@ -11,7 +11,20 @@ function onClick(e) {
     console.log(e.offsetX, e.offsetY);
 }
 
+// For Game
+function onDrag(e) {
+    document.querySelector('h1').textContent = `X ${e.clientX}, Y ${e.clientY}`;
+}
+
 logo.addEventListener('click', onClick);
+logo.addEventListener('drag', onDrag);
+
+// 클릭 방지
+document.querySelector('a').addEventListener('click', (e) => {
+    e.preventDefault();
+
+    console.log('Link was clicked');
+});
 
 // document.body.addEventListener('click', (e) => {
 //     console.log(e.target); // 엘리먼트
