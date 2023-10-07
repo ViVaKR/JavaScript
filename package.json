@@ -10,7 +10,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@material/web": "^1.0.0",
     "eslint": "^8.50.0",
     "js-yaml": "^4.1.0"
+  },
+  "dependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.2",
+    "rollup": "^4.0.2"
   }
 }

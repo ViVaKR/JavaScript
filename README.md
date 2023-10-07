@@ -63,14 +63,19 @@
 - ES2 : ECMAScript 2 (1998), The Original JavaScript
 - ES3 : ECMAScript 3 (1999), The Original JavaScript
 - ES4 : ECMAScript Never Released
-- ES5 : ECMAScript 2009, The First Main Revision
-- ES6 : ECMAScript 2015, The Second Revision
-- ECMAScript 2016
+- `ES5` : ECMAScript 2009, The First Main Revision
+- `ES6` : ECMAScript 2015, The Second Revision
+- ES7 : ECMAScript 2016
 - ECMAScript 2017
-- ECMAScript 2017
-- ECMAScript 2018
+- ES8 : ECMAScript 2017
+- ES9 : ECMAScript 2018
 - ECMAScript 2019
-- ECMAScript 2020
+- ES10 : ECMAScript 2020
+
+## JavaScript Engines
+
+- Chrome : `V8`
+- Safari : `JSCore`
 
 ## DOM Node Types
 
