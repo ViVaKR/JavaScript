@@ -1,6 +1,5 @@
 import hooks from 'node:async_hooks'
 import { Buffer } from 'node:buffer';
-import { error } from 'node:console';
 
 // const { Console } = require('node:console');
 const { Console } = console;
@@ -26,4 +25,3 @@ console.error(new Error('Whoops, something bad happend'));
 
 const name = 'Will Robinson';
 console.warn(`Danger ${name} Dnager`);
-
