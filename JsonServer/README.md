@@ -5,7 +5,7 @@
 1. node.js
 2. npm install -g json-server
 3. create db.json
-4. watch : `npx json-server db.json`
+4. watch : `npx json-server data/data.json`
 5. curl <http://localhost:3000/post/1>
 
 >- Watch
@@ -77,6 +77,8 @@ DELETE /posts/1?_dependent=comments
   }
 }
 ```
+
+## FETCH
 
 ## PATCH
 
