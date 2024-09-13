@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QnA</title>
+</head>
+
+<body>
+  <div id="orginal" class="view-src">
+    <div>
+      <p><strong>2. iPad</strong>
+        <br />
+        <span id="pageInfo"></span>
+      </p>
+      <form class="form" name="form" method="post" action="item_save.asp">
+        <input type="hidden" id="hNO_5001_1" value="2">
+        <input type="hidden" id="h5001001_1" value="https://www.xsa.co.kr/Apple/iPad/c/cos_12">
+        <textarea
+                  id="txt"
+                  class=""
+                  rows="10" style="width: 100%;"
+                  onchange="bigyo();"></textarea>
+        <div style="margin: 0 20px;">
+          <button type="submit"
+                  id="btn">
+            Open
+          </button>
+        </div>
+    </div>
+    </form>
+  </div>
+
+  <div class="" style="display: flex; margin:1rem 2em; justify-content: center;">
+    <button onclick="demo()"
+            onmouseover="this.style.backgroundColor='skyblue'"
+            onmouseleave="this.style.backgroundColor='white'"
+            style="padding: 1rem 2rem; border-radius: 10px;  width: 200px; height: 100px; cursor: pointer; ">Demo</button>
+  </div>
+  <div id="targetPlace"></div>
+  <script src="index.js"></script>
+</body>
+
+</html>

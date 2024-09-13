@@ -1,0 +1,221 @@
+$my-color: #fff;
+
+$width: calc(100vw / 2);
+
+@debug calc(pi);
+
+$width: calc(400px + 10%);
+
+.top {
+    width: 100%;
+    height: 300px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        animation-duration: 5s;
+        animation-name: slidein;
+    }
+
+}
+
+.btns {
+    margin: 1rem 2rem;
+}
+
+button {
+    width: 100px;
+    height: 50px;
+    font-size: large;
+    background-color: lightcoral;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    animation-duration: 5s;
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        translate: 150vw 0;
+        scale: 200% 1;
+    }
+
+    to {
+        translate: 0 0;
+        scale: 100% 1;
+    }
+}
+
+@keyframes growshrink {
+
+    25%,
+    75% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(3);
+        color: magenta
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+
+    25% {
+        color: skyblue;
+    }
+
+    50% {
+        color: magenta;
+    }
+
+    75% {
+        color: lightcoral;
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.below {
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+span {
+    display: inline-block;
+    animation-duration: 10s;
+    // animation-name: growshrink;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+
+}
+
+.vivakr {
+    width: 100px;
+    height: 100px;
+    border: 2px solid;
+}
+
+.demo-container {
+    height: 50vh;
+    padding: 1em;
+    background-color: lightgray;
+
+    h1 {
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 1em;
+        background-color: lightcoral;
+        width: calc($width / 2);
+        padding: 1rem;
+        border-radius: 50%;
+
+    }
+
+    p {
+        background-color: lightcoral;
+        width: calc($width);
+    }
+}
+
+.container {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container .chart {
+    flex: 1;
+
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+
+    margin: 2px 0;
+
+    // background-color: lightcoral;
+    div {
+        width: 100%;
+        height: 100%;
+        margin: 1spx;
+        padding: auto 0;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        border: 1px solid white;
+        background-color: skyblue;
+    }
+
+    #stack_1 {
+        display: flex;
+        width: 2em;
+        height: 70%;
+        margin-bottom: 0.3em;
+        color: $my-color;
+        align-items: center;
+        background-color: lightcoral;
+    }
+
+    #stack_2 {
+        display: flex;
+        width: 2em;
+        height: 45%;
+        margin-bottom: 0.3em;
+        color: $my-color;
+        align-items: center;
+        background-color: lightcoral;
+    }
+
+    #stack_3 {
+        display: flex;
+        width: 2em;
+        height: 60%;
+        margin-bottom: 0.3em;
+        color: $my-color;
+        align-items: center;
+        background-color: lightcoral;
+    }
+
+    #stack_4 {
+        display: flex;
+        width: 2em;
+        height: 80%;
+        margin-bottom: 0.3em;
+        color: $my-color;
+        align-items: center;
+        background-color: lightcoral;
+    }
+}
+
+.container .grade {
+    height: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin: 2px 0;
+
+    // background-color: lightcoral;
+    div {
+        width: 100%;
+        height: 100%;
+        margin: 1spx;
+        padding: auto 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid white;
+        background-color: lightgreen;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Demo</title>
+</head>
+
+<body>
+
+  <div id="output"></div>
+  <div id="timer">
+    --:--:--
+  </div>
+  <div class="btns">
+    <button onclick="window.scrollBy({
+      top: window.innerHeight,
+      left: 0,
+      behavior: 'smooth'
+    });alert(location.hostname);">scroll</button>
+    <button onclick="onBtoa('Hello, World')">btoa</button>
+    <button onclick="onBlur()">blur</button>
+    <button onclick="onInterval();
+    let a = confirm('Press a button!\nEither OK or Cancel.');console.log(a);">interval</button>
+  </div>
+
+  <div class="top">
+    <div class="vivakr">ViV</div>
+    <p class="subtitle">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quos laboriosam nemo veniam necessitatibus ipsum fuga, minus blanditiis molestiae similique eum voluptatibus quaerat consequuntur fugit odio rem quas velit nostrum.
+    </p>
+
+
+  </div>
+
+  <p class="below" id="watchme">
+    Lorem ipsum dolor sit <span>ViVaKR</span> amet consectetur adipisicing elit. Praesentium quae qui provident? Obcaecati, itaque! Cupiditate minus dolore nihil quaerat impedit consequuntur placeat recusandae voluptate nisi eaque vitae
+    distinctio, accusantium minima.
+  </p>
+  <div class="demo-container">
+    <h1>Hello, World</h1>
+    <p>Fine Thanks and You?</p>
+  </div>
+
+  <div class="container">
+    <div class="chart">
+      <div>
+        <div id="stack_1">70</div>
+      </div>
+      <div>
+        <div id="stack_2">45</div>
+      </div>
+      <div>
+        <div id="stack_3">60</div>
+      </div>
+      <div>
+        <div id="stack_4">80</div>
+      </div>
+    </div>
+
+    <div class="grade">
+      <div>1학년</div>
+      <div>2학년</div>
+      <div>3학년</div>
+      <div>4학년</div>
+    </div>
+  </div>
+
+  <div>
+    <button onclick="window.scroll({
+      top: -window.innerHeight,
+      left: 0,
+      behavior: 'smooth'
+    })">scroll</button>
+  </div>
+
+  <!-- Script -->
+  <script type="text/javascript" src="employee.js"></script>
+  <script type="text/javascript" src="car.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
