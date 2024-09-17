@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #divStyle {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      margin: auto 0;
+      padding: auto 0;
+      border: 1px solid #fff;
+      border-radius: 1em;
+      width: 100%;
+      height: 100%;
+      background-color: #be1c1c;
+    }
+
+    span {
+      color: white !important;
+      /* margin: 5rem; */
+      margin-top: 5rem;
+      margin-bottom: 5rem;
+
+      padding-top: 0.5rem;
+      padding-bottom: 2.1rem;
+      font-size: 7rem;
+      color: rgb(70, 163, 163);
+      font-weight: 500;
+      cursor: pointer;
+      height: 100%;
+      width: 200px;
+      text-align: center;
+      border: 2px dotted #fff;
+      border-radius: 20px;
+
+    }
+
+    span:hover {
+      -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+      -moz-box-reflect: below 1px linear-gradient(transparent, #0005);
+      -ms-box-reflect: below 1px linear-gradient(transparent, #0005);
+    }
+
+    #result {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      border-radius: 1em;
+      background: #050801;
+      color: #f48003;
+      border: none;
+      /* box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 100px #03e9f4; */
+      cursor: pointer;
+      font-size: 1em;
+    }
+
+    button:hover {
+      background: #03e9f4;
+      color: #f708b3;
+      box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4, 0 0 200px #03e9f4;
+      /* reflect: below 1px linear-gradient(transparent, #0005); */
+      -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+      -moz-box-reflect: below 1px linear-gradient(transparent, #0005);
+      -ms-box-reflect: below 1px linear-gradient(transparent, #0005);
+    }
+
+    h1 {
+      padding: 0.5rem;
+      border-radius: 0.3em;
+    }
+
+    h1#title {
+      color: teal;
+      margin: 1rem auto;
+      background: -webkit-linear-gradient(45deg, #00C9FF 0%, #92FE9D 100%);
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1 style="text-align: center;" id="title">겜블링</h1>
+  <p style="text-align: center; color: gray;">클릭시 [ 0, 1, 2 ] 중 하나의 수가 임의로 결정됩니다. 모두 같은 수가 나오면 승리</p>
+  <hr>
+
+  <div id="divStyle">
+    <span id="numRand" onclick="num()">&#127003;</span>
+    <span id="numRand2" onclick="num2()">&#127003;</span>
+    <span id="numRand3" onclick="num3()">&#127003;</span>
+  </div>
+
+  <h1 id="result" style="color: #be1c1c;width: 100%; height: 50px;"></h1>
+
+  <hr>
+
+
+  <div style="display:flex; flex-direction: row; align-items: center; justify-content:center; margin: 2rem auto;">
+    <button onclick="location.reload()">다시하기</button>
+  </div>
+  <script>
+
+    let numbers = [0, 0, 0];
+    let num_OneClick = false;
+    let num2_OneClick = false;
+    let children = document.getElementById("divStyle").children;
+
+    function num() {
+      if (!num_OneClick) {
+        const spanNum = document.getElementById("numRand");
+        numbers[0] = Math.floor(Math.random() * 3);
+        spanNum.innerHTML = numbers[0];
+        num_OneClick = true;
+
+        children[0].style.border = "2px solid #fff";
+        children[0].style.paddingTop = "3.5rem";
+        return;
+      }
+
+      waringMassage();
+    }
+
+    function num2() {
+      if (!num2_OneClick) {
+        const spanNum = document.getElementById("numRand2");
+        numbers[1] = new Number(Math.floor(Math.random() * 3));
+        spanNum.innerHTML = numbers[1];
+        num2_OneClick = true;
+        children[1].style.border = "2px solid #fff";
+        children[1].style.paddingTop = "3.5rem";
+        return;
+      }
+
+      waringMassage();
+    }
+
+    function num3() {
+      const spanNum = document.getElementById("numRand3");
+      numbers[2] = new Number(Math.floor(Math.random() * 3));
+      spanNum.innerHTML = numbers[2];
+      children[2].style.border = "2px solid #fff";
+      children[2].style.paddingTop = "3.5rem";
+      printResult();
+    }
+
+    function printResult() {
+      const result = document.getElementById("result");
+      let check = numbers.every((num) => Number(num) === Number(numbers[0]));
+
+      if (check) {
+        result.innerHTML = "축하합니다. 성공하셨습니다.";
+        return;
+      } else {
+        result.innerHTML = "실패하셨습니다.";
+      }
+    }
+
+    function waringMassage() {
+      tartget.innerHTML = "이미 한번을 클릭하셨습니다 다음 번호를 진행해주세요.";
+    }
+
+  </script>
+</body>
+
+</html>
