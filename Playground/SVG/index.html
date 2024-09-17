@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Part 1</title>
+</head>
+
+<body>
+  <!-- <svg width="800" height="600">
+    <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="red" />
+  </svg> -->
+
+  <div class="container">
+    <div>
+      <svg width="120" height="120" xmlsn="http://www.w3.rog/2000/svg">
+        <rect x="10" y="10" width="100" height="100" rx="25" ry="25" fill="orange" stroke-width="4" stroke="teal" />
+      </svg>
+    </div>
+
+    <div>
+      <svg width="220" height="220" xmlsn="http://www.w3.rog/2000/svg">
+        <circle cx="100" cy="55" r="50" fill="teal" stroke="gray" stroke-width="3" opacity="0.5" />
+      </svg>
+    </div>
+
+    <div>
+      <svg width="220" height="220" xmlsn="http://www.w3.rog/2000/svg">
+        <ellipse cx="100" cy="55" rx="60" ry="20" fill="yellow" stroke="dark" stroke-width="3" />
+      </svg>
+    </div>
+
+    <div>
+      <svg width="100%" height="220">
+        <line x1="55" y1="55" x2="500" y2="55" stroke="red" stroke-width="2" />
+      </svg>
+    </div>
+
+
+    <div>
+      <svg width="100%" height="220" xmlsn="http://www.w3.rog/2000/svg">
+        <polygon points="200,10 300,80 160,120 100,80" fill="lime" stroke="red" stroke-width="4" />
+      </svg>
+    </div>
+
+    <div>
+      <svg width="100%" height="220" xmlsn="http://www.w3.rog/2000/svg">
+        <path d="M150 10 L75 120 L225 120 Z" fill="none" stroke="green" stroke-width="3" />
+        <path d="M300 10 L600 10 L600 120 L300 120 Z" fill="darkmagenta" stroke="salmon" stroke-width="3" />
+      </svg>
+    </div>
+
+
+    <div>
+      <svg width="100%" height="220" xmlsn="http://www.w3.rog/2000/svg">
+        <g font-size="30" font-family="sans-serif" fill="green" text-anchor="middle">
+          <text x="100" y="120" dx="-30">A</text>
+          <text x="250" y="50" dy="-10">B</text>
+          <text x="400" y="120" dx="30">C</text>
+        </g>
+      </svg>
+    </div>
+
+    <div>
+      <svg width="100%" height="220" xmlsn="http://www.w3.rog/2000/svg">
+        <g font-size="30" font-family="FiraCode Nerd Font" text-anchor="left">
+          <text x="5" y="30" fill="lime" transform="rotate(10 20,40)">Hello, World</text>
+        </g>
+      </svg>
+    </div>
+
+    <div>
+      <svg width="100%" height="220" xmlsn="http://www.w3.rog/2000/svg">
+        <a href="https://www.google.com" target="_blank">
+          <circle r="45" cx="55" cy="55" fill="red" />
+      </svg>
+    </div>
+
+    <div>
+      <svg width="100%" height="220" xmlsn="http://www.w3.rog/2000/svg">
+        <defs>
+          <marker id="circle" markerWidth="8" markerHeight="8" refX="5" refY="5">
+            <circle cx="5" cy="5" r="3" fill="black" />
+          </marker>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="black" />
+          </marker>
+        </defs>
+        <line x1="10" y1="10" x2="100" y2="100" stroke="red" stroke-width="2"
+              marker-start="url(#circle)"
+              marker-end="url(#arrow)" />
+
+      </svg>
+    </div>
+
+    <div>
+      <svg width="100%" height="220" xmlsn="http://www.w3.rog/2000/svg">
+        <defs>
+          <filter id="f1">
+            <feDropShadow dx="12" dy="12" stdDeviation="5" flood-opacity="0.3" />
+          </filter>
+        </defs>
+        <rect x="10" y="10" width="90" height="90" fill="yellow" filter="url(#f1)" />
+      </svg>
+    </div>
+
+    <div>
+      <svg width="100%" height="220" xmlsn="http://www.w3.rog/2000/svg">
+        <circle cx="50" cy="50" r="10" fill="red">
+          <animate attributeName="cx"
+                   begin="0s"
+                   dur="10s"
+                   from="50"
+                   to="90%"
+                   repeatCount="indefinite" />
+        </circle>
+      </svg>
+    </div>
+
+    <div>
+      <svg width="100%" height="220" xmlsn="http://www.w3.rog/2000/svg">
+        <circle cx="50" cy="50" r="20" fill="red">
+          <animate attributeName="cx"
+                   begin="0s"
+                   dur="10s"
+                   from="50"
+                   to="90%"
+                   repeatCount="indefinite" />
+        </circle>
+      </svg>
+    </div>
+
+    <div>
+      <svg width="100%" height="220" xmlsn="http://www.w3.rog/2000/svg">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(255,255,255);stop-opacity:0" />
+            <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+          </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)">
+          <animate attributeName="rx"
+                   begin="0s"
+                   dur="10s"
+                   from="85"
+                   to="90%"
+                   repeatCount="indefinite" />
+        </ellipse>
+      </svg>
+    </div>
+
+    <div>
+      <svg width="100%" height="220" xmlsn="http://www.w3.rog/2000/svg">
+        <rect x="30" y="30" width="80" height="80" fill="coral">
+          <animateTransform
+                            attributeName="transform"
+                            begin="0s"
+                            dur="10s"
+                            type="rotate"
+                            from="0 80 80" to="360 80 80" />
+
+        </rect>
+      </svg>
+    </div>
+
+    <div>
+      <svg width="100%" height="220" xmlsn="http://www.w3.rog/2000/svg">
+
+      </svg>
+    </div>
+
+    <div>
+      <svg width="100%" height="220" xmlsn="http://www.w3.rog/2000/svg">
+
+      </svg>
+    </div>
+
+
+  </div>
+
+
+  <div id="target"></div>
+
+
+  <script src="index.js"></script>
+</body>
+
+</html>
