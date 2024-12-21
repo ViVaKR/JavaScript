@@ -1,0 +1,9 @@
+// Import all of Bootstrap's CSS using @use
+@use 'bootstrap/scss/bootstrap';
+
+// Suppress deprecation warnings
+$deprecation-warnings: false;
+
+body {
+  background-color: #f8f9fa;
+}
