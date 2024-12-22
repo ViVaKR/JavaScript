@@ -4,12 +4,96 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Webpack</title>
+    <title>Bootstrap Webpack Camp</title>
   </head>
 
   <body>
     <div class="container py-4 px-3 mx-auto text-secondary">
-      <h1>Hello, World!</h1>
+
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false"
+                  aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button"
+                   data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#"
+                   data-bs-toggle="dropdown"
+                   role="button">Dropdown Link</a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#" class="dropdown-item">Action 1</a>
+                  </li>
+                  <li>
+                    <a href="#" class="dropdown-item">Action 2</a>
+                  </li>
+                  <li class="dropdown-divider"></li>
+                  <li>
+                    <a href="#" class="dropdown-item">Action 3</a>
+                  </li>
+                </ul>
+
+              </li>
+
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search"
+                     placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success"
+                      type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      <div class="row row-cols-2">
+        <div class="col">
+          <div class="alert alert-primary">Primary</div>
+          <div class="alert alert-secondary">Secondary</div>
+          <div class="alert alert-success">Success</div>
+          <div class="alert alert-danger">Danger</div>
+          <div class="alert alert-warning">Warning</div>
+          <div class="alert alert-info">Info</div>
+          <div class="alert alert-light">Light</div>
+          <div class="alert alert-dark">Dark</div>
+        </div>
+        <div class="col" id="target-a">Hello</div>
+        <div class="col">World</div>
+        <div class="col">fine</div>
+        <div class="col">thanks</div>
+        <div class="col">and</div>
+        <div class="col">you</div>
+        <div class="col">Good</div>
+        <div class="col">Nice</div>
+        <div class="col">every one</div>
+      </div>
+      <h1>Hello, World! fine</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. A minus quo
         voluptates modi velit nesciunt culpa, non hic, sed voluptatem possimus
@@ -21,3 +105,21 @@
   </body>
 
 </html>
+
+<!--
+a tag vs button tag
+  - a tag: for navigation
+  - button tag: for action
+  - a tag: for external link
+  - button tag: for internal link
+  - a tag: for anchor link
+  - button tag: for action link
+  - a tag: for href attribute
+  - button tag: for type attribute
+  - a tag: for href attribute
+  - button tag: for onclick attribute
+  - a tag: 주로 네비게이션에 사용
+  - button tag: 주로 액션에 사용
+  - a tag: 주로 외부 링크에 사용
+  - button tag: 주로 내부 링크에 사용
+-->
