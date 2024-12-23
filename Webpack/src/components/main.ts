@@ -1,13 +1,23 @@
-// Import our custom CSS
-import '../scss/styles.scss'
+import '@/scss/styles.scss'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-// Import Bootstrap
-import * as bootstrap from 'bootstrap';
+class ButtonHandler {
+    constructor() {
+        this.initialize();
+    }
 
-function start() {
-    console.log('Hello, From Main.ts');
-    for (let i = 0; i < 10; i++) {
-        console.log(i);
+    initialize() {
+        const successButton = document.querySelector('.btn.btn-outline-success.btn-sm');
+        if (successButton) {
+            successButton.addEventListener('click', this.handleSuccessButtonClick);
+        }
+    }
+
+    handleSuccessButtonClick() {
+        alert('Success button clicked!');
     }
 }
-start();
+
+document.addEventListener('DOMContentLoaded', () => {
+    new ButtonHandler();
+});

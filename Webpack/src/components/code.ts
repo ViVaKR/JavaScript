@@ -1,7 +1,11 @@
+// import '@/scss/styles.scss'
+import '@/scss/code.scss';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 import { Person } from '@/models/person';
 import { hello, Calculator } from 'js/demo';
 
-export class Code {
+class Code {
     constructor() {
         console.log('Demo: ', hello('world'));
 
@@ -22,4 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const code = new Code();
     code.greet();
 
+    const btn = document.getElementById('btnAlert');
+    btn?.addEventListener('click', () => {
+        console.log()
+        alert('Hello world!');
+    });
+
 });
+
+export { Code };

@@ -8,7 +8,115 @@
   </head>
 
   <body>
-    <h1>Code</h1>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button"
+                 data-bs-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search"
+                   aria-label="Search">
+            <button class="btn btn-outline-success"
+                    type="submit">Search</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+
+        <div class="col">
+          <!-- Collapse -->
+          <p>
+            <button class="btn btn-success" type="button"
+                    data-bs-toggle="collapse"
+                    aria-controls="collapseTarget"
+                    data-bs-target="#collapseTarget" aria-expanded="false">
+              Collapse
+            </button>
+          <div style="min-height: 120px;">
+            <div class="collapse collapse-horizontal" id="collapseTarget">
+
+              <div class="card card-body" style="width: 300px;">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dignissimos, inventore error, totam ut aperiam exercitationem
+                vero id sit doloremque accusantium ducimus in possimus
+                reprehenderit animi aut suscipit quos, ullam magni?
+              </div>
+            </div>
+
+          </div>
+
+          </p>
+
+        </div>
+        <div class="col">
+          Secondary
+        </div>
+
+        <div>
+          Another
+        </div>
+      </div>
+
+
+    </div>
+    </div>
+
+    <div
+         class="h-48 bg-rose-400 rounded-full ml-4  w-48 text-center content-center">
+      Good
+    </div>
+    <button class="btn btn-outline-danger m-4">button</button>
+    <div
+         class="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center gap-x-4">
+      <div class="shrink-0">
+        <img class="size-12" src="assets/robot.png"
+             alt="ChitChat Logo">
+      </div>
+      <div>
+        <div class="text-xl font-medium text-black">ChitChat</div>
+        <p class="text-slate-500">You have a new message!</p>
+      </div>
+    </div>
+    <footer
+            class="h-48 my-8 content-center text-center w-full bg-slate-400 outline-red-600">
+      Footer
+    </footer>
   </body>
 
 </html>
