@@ -8,14 +8,14 @@ import TerserPlugin from 'terser-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { server } from 'typescript';
 import { watch } from 'fs';
+import { sourceMapsEnabled } from 'process';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const config = {
     mode: 'development',
     entry: {
-        main: './src/components/main.ts',  // main.ts로 변경
-        code: './src/components/code.ts'    // code.ts로 변경
+        main: './src/Index.tsx'
     },
     output: {
         filename: '[name].[contenthash].js', // 각 번들 파일의 이름을 설정함. [name]은 entry의 key값을 사용함.
@@ -29,16 +29,12 @@ const config = {
         hot: true, // 모듈의 변경 사항이 있을 때 자동으로 페이지를 새로 고침함.
         open: true, // 서버를 실행할 때 브라우저를 자동으로 열도록 설정함.
         port: 8080, // 서버의 포트 번호를 설정함.
-        watchFiles: ['src/**/*.html', 'src/**/*.js', 'src/**/*.scss', 'src/**/*.ts'], // 파일의 변경을 감지할 경로를 설정함.
-        historyApiFallback: {
-            rewrites: [
-                { from: /^\/index$/, to: '/index.html' },
-                { from: /^\/code$/, to: '/code.html' }
-            ]
-        }
+        watchFiles: ['src/**/*.html', 'src/**/*.js', 'src/**/*.scss', 'src/**/*.ts', 'src/**/*.tsx'], // 파일이 변경되었을 때 서버를 재시작할 파일을 설정함.
+        historyApiFallback: true
+
     },
     resolve: {
-        extensions: ['.ts', '.js'], // 탐색할 확장자를 설정함. 확장자를 명시하지 않아도 되도록 설정함.
+        extensions: ['.ts', '.tsx', '.js', '.jsx'], // 탐색할 확장자를 설정함. 확장자를 명시하지 않아도 되도록 설정함.
         alias: {
             '@': path.resolve(__dirname, 'src'), // 모듈을 더 쉽게 import 하기 위해 별칭을 설정함.
             'js': path.resolve(__dirname, 'src/js'), // 모듈을 더 쉽게 import 하기 위해 별칭을 설정함.
@@ -71,7 +67,7 @@ const config = {
     module: {
         rules: [
             {
-                test: /\.ts$/, // .ts 확장자를 가진 파일에 대해 아래의 로더를 사용합니다.
+                test: /\.(ts|tsx)$/i, // .ts 확장자를 가진 파일에 대해 아래의 로더를 사용합니다.
                 use: 'ts-loader', // ts-loader를 사용합니다.
                 exclude: /node_modules/ // node_modules 폴더의 파일은 제외합니다.
             },
@@ -82,16 +78,16 @@ const config = {
             {
                 test: /\.(scss|css)$/,  // .scss 확장자를 가진 파일에 대해 아래의 로더를 사용합니다.
                 use: [
+                    MiniCssExtractPlugin.loader,
                     {
-                        // Adds CSS to the DOM by injecting a `<style>` tag
-                        // CSS를 `<style>` 태그로 DOM에 추가합니다.
-                        // loader: 'style-loader',
-                        loader: MiniCssExtractPlugin.loader
-                    },
-                    {
-                        // Interprets `@import` and `url()` like `import/require()` and will resolve them
-                        // `@import`와 `url()`을 해석하여 `import/require()`처럼 동작하게 합니다
-                        loader: 'css-loader'
+                        loader: 'css-loader',
+                        // options: {
+                        //     importLoaders: 2,
+                        //     modules: {
+                        //         exportLocalsConvention: 'camelCase',
+                        //         localIdentName: '[name]__[local]___[hash:base64:5]'
+                        //     }
+                        // }
                     },
                     {
                         // Loader for webpack to process CSS with PostCSS
@@ -99,7 +95,8 @@ const config = {
                         options: {
                             postcssOptions: {
                                 plugins: [
-                                    autoprefixer
+                                    'tailwindcss',
+                                    'autoprefixer',
                                 ]
                             }
                         }
@@ -108,6 +105,7 @@ const config = {
                         // SASS/SCSS 파일을 CSS 로 컴파일 합니다.
                         loader: 'sass-loader',
                         options: {
+                            sourceMap: true,
                             sassOptions: {
                                 quietDeps: true
                             }
@@ -154,14 +152,4 @@ export default (env, argv) => {
     }
     return config;
 };
-/*
-는 로더 종류는 아래와 같다.
 
-CSS Loader
-Babel Loader
-Sass Loader
-File Loader
-Vue Loader
-TS Loader
-
-*/

@@ -12,4 +12,7 @@ npm i --save-dev webpack webpack-cli \
 
 npm install --save-dev mini-css-extract-plugin terser-webpack-plugin
 npm install --save-dev @tailwindcss/forms @tailwindcss/aspect-ratio @tailwindcss/typography tailwindcss-children
+
+# SPA
+npm install react react-dom react-router-dom
 ```

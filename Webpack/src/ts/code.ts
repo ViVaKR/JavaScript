@@ -2,7 +2,6 @@
 import '@/scss/code.scss';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-import { Person } from '@/models/person';
 import { hello, Calculator } from 'js/demo';
 
 class Code {
@@ -17,8 +16,7 @@ class Code {
     }
 
     public greet(): void {
-        let person = new Person('John', 30);
-        console.log(person.greet());
+        console.log("Hi");
     }
 }
 
