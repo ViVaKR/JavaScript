@@ -8,13 +8,13 @@ const menuItems = [
   { name: '캠프', url: '/Camp' },
   { name: '김범준', url: '/Member' },
   {
-    name: '김범준',
-    url: '/Member',
+    name: '기타',
+    url: '/Utils',
     subMenu: [
-      { name: '프로파일', url: '/Profile' },
-      { name: '회원가입', url: 'Signup' },
-      { name: '로그인', url: '/Signin' },
-      { name: '로그아웃', url: '/Signout' },
+      { name: 'Bootstrap', url: '/Utils/Bootstrap' },
+      { name: 'Tailwindcss', url: '/Tailwindcss' },
+      { name: 'DataAPI', url: '/DataApi' },
+      { name: 'Demo', url: '/Demo' },
     ],
   },
 ];

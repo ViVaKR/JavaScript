@@ -9,6 +9,9 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 import { server } from 'typescript';
 import { watch } from 'fs';
 import { sourceMapsEnabled } from 'process';
+import webpack from 'webpack';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -18,19 +21,29 @@ const config = {
         main: './src/Index.tsx'
     },
     output: {
-        filename: '[name].[contenthash].js', // 각 번들 파일의 이름을 설정함. [name]은 entry의 key값을 사용함.
-        chunkFilename: '[name].[contenthash].js', // 동적 임포트로 생성된 번들 파일의 이름을 설정함. 청크 파일의 이름을 설정함.
-        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].[contenthash].js', // 각 번들 파일의 이름을 설정함.
+        chunkFilename: '[name].[contenthash].js', // 청크 파일의 이름을 설정함.
+        path: path.resolve(__dirname, 'dist'), // 번들 파일이 생성될 경로를 설정함. 절대 경로를 사용함.
+        // publicPath: '/', // 정적 파일이 제공될 경로를 설정함.
         clean: true, // 빌드(build) 이전 결과물을 제거함.
         // publicPath: '/'
     },
     devServer: {
-        static: path.resolve(__dirname, 'dist'), // 정적 파일을 제공할 경로를 설정함. 절대 경로를 사용함.
-        hot: true, // 모듈의 변경 사항이 있을 때 자동으로 페이지를 새로 고침함.
-        open: true, // 서버를 실행할 때 브라우저를 자동으로 열도록 설정함.
+        static: path.resolve(__dirname, 'dist'), // 정적 파일 제공 경로
+        hot: true, // HMR 기능을 활성화함.
+        open: true, // 서버 시작시 브라우저 자동 열기
         port: 8080, // 서버의 포트 번호를 설정함.
-        watchFiles: ['src/**/*.html', 'src/**/*.js', 'src/**/*.scss', 'src/**/*.ts', 'src/**/*.tsx'], // 파일이 변경되었을 때 서버를 재시작할 파일을 설정함.
-        historyApiFallback: true
+        watchFiles: [
+            'src/**/*.html',
+            'src/**/*.js',
+            'src/**/*.scss',
+            'src/**/*.ts',
+            'src/**/*.tsx'
+        ], // 파일이 변경되었을 때 서버를 재시작할 파일을 설정함.
+        historyApiFallback: true,// HTML5 API 를 사용하는 SPA
+        headers: {
+            'X-Content-Type-Options': 'nosniff'
+        }
 
     },
     resolve: {
@@ -62,12 +75,15 @@ const config = {
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css',
             chunkFilename: '[name].[contenthash].css'
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin(), // HMR 플러그인 추가
+        // new HotModuleReplacementPlugin(), // HMR 플러그인 추가
+        // new BundleAnalyzerPlugin()
     ],
     module: {
         rules: [
             {
-                test: /\.(ts|tsx)$/i, // .ts 확장자를 가진 파일에 대해 아래의 로더를 사용합니다.
+                test: /\.(ts|tsx)$/i, // TypeScript 파일을 처리하기 위한 규칙.
                 use: 'ts-loader', // ts-loader를 사용합니다.
                 exclude: /node_modules/ // node_modules 폴더의 파일은 제외합니다.
             },
@@ -76,18 +92,15 @@ const config = {
                 loader: 'babel-loader',
             },
             {
-                test: /\.(scss|css)$/,  // .scss 확장자를 가진 파일에 대해 아래의 로더를 사용합니다.
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                test: /\.(scss)$/,  // SCSS 파일을 처리하기 위한 규칙
                 use: [
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
-                        // options: {
-                        //     importLoaders: 2,
-                        //     modules: {
-                        //         exportLocalsConvention: 'camelCase',
-                        //         localIdentName: '[name]__[local]___[hash:base64:5]'
-                        //     }
-                        // }
                     },
                     {
                         // Loader for webpack to process CSS with PostCSS
@@ -115,18 +128,29 @@ const config = {
 
             },
             {
-                test: /\.(png|jpe?g|gif|svg|ico|mp4|webp)$/i,
+                test: /\.(png|jpe?g|gif|svg|ico|webp)$/i,
                 type: 'asset/resource',
                 generator: {
                     filename: 'assets/[name][hash][ext][query]'
+                }
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/, // 폰트 파일을 처리하기 위한 규칙
+                type: 'asset/resource',
+                generator: {
+                    filename: 'fonts/[name][hash][ext][query]'
                 }
             }
 
         ]
     },
     optimization: {
-        minimize: true,
-        minimizer: [new TerserPlugin()],
+        minimize: true, // 코드 난독화를 설정함.
+        minimizer: [new TerserPlugin()], // TerserPluging 을 사용하여 번들 파일을 난독화함.
+        // 모든 종류의 청크를 분리하여 성능 최적화와 캐싱 효율성을 높이는데 도움이 되는 설정으로
+        // 일반적으로 권장되는 설정
+        // 이 설정을 통해 Webpack 은 번들파일을 더 작은 청크로 분리하여,
+        // 초기 로딩 시간을 줄이고, 캐싱 효율성을 높일 수 있습니다.
         splitChunks: { chunks: 'all' }
     },
     performance: {

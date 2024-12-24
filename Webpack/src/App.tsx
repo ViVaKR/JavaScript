@@ -9,12 +9,14 @@ import Profile from './components/member/profile/Profile';
 import Signup from './components/member/signup/Signup';
 import Signin from './components/member/signin/Signin';
 import Signout from './components/member/signout/Signout';
+import Demo from './components/utils/Demo';
 
 const routes = [
   { path: '/', element: <Home /> },
   { path: '/Code', element: <Code /> },
   { path: '/Camp', element: <Camp /> },
   { path: '/Chat', element: <Chat /> },
+  { path: '/Demo', element: <Demo /> },
   {
     path: '/Member',
     element: <Member />,
@@ -25,7 +27,7 @@ const routes = [
       { path: 'Signout', element: <Signout /> },
     ],
   },
-  // { path: '/Member/Member', element: <Member /> },
+
   // { path: '/Member/Profile', element: <Profile /> },
   // { path: '/Member/Signup', element: <Signup /> },
   // { path: '/Member/Signin', element: <Signin /> },
