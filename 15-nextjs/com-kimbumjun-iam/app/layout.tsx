@@ -1,11 +1,11 @@
 'use client';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
 import './globals.css';
 import AddBootstrap from './addBootstrap';
 import Menus from './menus/page';
 import { metadata } from './shared/metadata';
+
 const queryClient = new QueryClient();
 
 export default function RootLayout({

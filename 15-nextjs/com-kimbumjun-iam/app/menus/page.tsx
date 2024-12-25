@@ -1,5 +1,7 @@
+'use client';
 import Link from 'next/link';
 import './menus.css';
+import MenuBar from '../menubar/page';
 
 const menuData = [
   {
@@ -37,32 +39,33 @@ const Menus = () => {
         navbar-expand-sm
         border-b-4
         border-rose-500
+        h-20
         bg-slate-800"
         data-bs-theme="dark">
         <div className="container-fluid">
-          <Link
+          {/* <Link
             key={'0'}
             href={'/'}
             className="navbar-brand tracking-widest text-white ml-4">
             ViV
-          </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menuItems"
-            aria-controls="menuItems"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          </Link> */}
+          <div className="h-full w-full">
+            <button
+              className="navbar-toggler ml-[calc(100%_-_3.5rem)]"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menuItems">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+          </div>
           <div
             className="collapse
-                      navbar-collapse flex
-                      justify-end
-                      items-center"
+                      navbar-collapse
+                      bg-slate-800
+                      w-full
+                      z-50"
             id="menuItems">
-            <div className="navbar-nav">
+            <div className="navbar-nav flex justify-end items-center w-full bg-slate-800/95">
               {menuData.map((menu) => {
                 return (
                   <Link
@@ -73,15 +76,7 @@ const Menus = () => {
                   </Link>
                 );
               })}
-              <li className="nav-item dropdown">
-                <button
-                  id="dropdownInformationButton"
-                  data-dropdown-toggle="dropdownInformation"
-                  className="text-white"
-                  type="button">
-                  <span className="material-symbols-outlined">more_vert</span>
-                </button>
-              </li>
+              <MenuBar />
             </div>
           </div>
         </div>
