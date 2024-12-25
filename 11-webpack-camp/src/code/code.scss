@@ -1,0 +1,9 @@
+@use '../scss/styles' as *;
+
+.code-container {
+  background-color: lightskyblue;
+  color: gray;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}

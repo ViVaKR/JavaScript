@@ -61,12 +61,6 @@ const config = {
             chunks: ['main'],
             favicon: path.resolve(__dirname, 'src/public/assets/favicon.ico')
         }),
-        new HtmlWebpackPlugin({
-            template: './src/public/code.html',
-            filename: 'code.html',
-            chunks: ['code'],
-            favicon: path.resolve(__dirname, 'src/public/assets/favicon.ico') // favicon 설정
-        }),
         new CopyWebpackPlugin({
             patterns: [
                 { from: path.resolve(__dirname, 'src/public/assets'), to: 'assets' }
