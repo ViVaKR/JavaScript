@@ -1,11 +1,15 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
+import bundleAnalyzer from '@next/bundle-analyzer';
+
+const withBundleAnalyzer = bundleAnalyzer({
     enabled: process.env.ANALYZE === 'true',
     openAnalyzer: true
 });
 
-module.exports = withBundleAnalyzer({
+export default withBundleAnalyzer({
     reactStrictMode: true,
     experimental: {
-        // This will show more detailed hydration error messages
+        turbo: {
+            enabled: true,
+        }
     }
 });

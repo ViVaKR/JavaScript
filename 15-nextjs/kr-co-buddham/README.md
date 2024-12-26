@@ -11,6 +11,10 @@ npm install @mui/icons-material
 
 #
 npm install --save-dev @next/bundle-analyzer
+
+
+# API
+npm install @tanstack/react-query axios
 ```
 
 <pre>

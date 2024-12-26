@@ -25,7 +25,6 @@ export default function RootLayout({
       <body>
         <QueryClientProvider client={queryClient}>
           <AddBootstrap />
-
           <>
             <Menus />
           </>

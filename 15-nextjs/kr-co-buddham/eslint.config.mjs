@@ -16,6 +16,18 @@ const eslintConfig = [
       "no-unused-vars": "off",
       "@typescript-eslint/no-unused-vars": "off"
     },
+    settings: {
+      'import/resolver': {
+        node: {
+          paths: ['.'],
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
+        alias: {
+          map: [['@', './']],
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        },
+      },
+    },
   },
 ];
 

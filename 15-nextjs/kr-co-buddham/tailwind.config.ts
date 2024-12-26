@@ -18,7 +18,8 @@ export default {
         cute: ['Cute Font', 'sans-serif'],
         noto: ['Noto Sans KR', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
-        firacode: ['Fira Code', 'monospace']
+        firacode: ['Fira Code', 'monospace'],
+        dongle: ['Dongle', 'sans-serif'],
       },
     },
   },
