@@ -8,6 +8,8 @@ export default function SutraNavigation() {
 
   const menuItems = [
     { href: '/sutra', label: '목록' },
+    { href: '/sutra/tables', label: '테이블' },
+    { href: '/sutra/data', label: '데이터' },
     { href: '/sutra/create', label: '생성' },
     { href: '/sutra/read/1', label: '읽기' },
     { href: '/sutra/update/1', label: '수정' },

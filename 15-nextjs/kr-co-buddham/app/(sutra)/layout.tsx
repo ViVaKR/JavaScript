@@ -3,16 +3,17 @@ import SutraNavigation from './SutraNavigation';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="flex flex-row">
+    <div className="grid grid-cols-[200px_minmax(0,_1fr)] max-lg:grid-cols-1 gap-2">
       <div
-        className="!w-44
-                    h-screen
+        className=" h-screen
                     bg-gradient-to-b
                     from-sky-800
-                    to-sky-200">
+                    max-lg:h-auto
+                    max-lg:shadow-md
+                    to-sky-100">
         <SutraNavigation />
       </div>
-      <main className="flex-1 p-8">{children}</main>
+      <main className="py-4 pr-8">{children}</main>
     </div>
   );
 };
