@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic HTML with JavaScript</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .navbar {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+      }
+
+      .navbar span {
+        cursor: pointer;
+        width: 100px;
+        text-align: center;
+        padding: 10px;
+        border-radius: 1rem;
+
+      }
+
+      .navbar span:hover {
+        background-color: royalblue;
+
+      }
+
+      .iframe-popup {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        display: flex;
+        cursor: pointer;
+        justify-content: center;
+        border-radius: 0.5rem;
+        box-shadow: #333 0 0 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="content"></div> <!-- HTML 결과가 삽입될 위치 -->
+
+    <script>
+
+      // 데이터 객체 정의
+      const data = {
+        link: {
+          link_board_detail: "https://www.google.com/",
+          param_read: "param_value"
+        }
+      };
+
+      // aHtml 배열 생성
+      let aHtml = [];
+
+      // HTML을 배열에 추가
+      // navbar
+      aHtml.push(`
+            <nav class="navbar">
+              <span>Home</span>
+              <span>Code</span>
+              <span>Playground</span>
+              <span>About</span>
+            </nav>
+        `);
+
+      // iframe-popup
+      aHtml.push(`
+            <div class="iframe-popup"
+                 data-link="${data.link.link_board_detail}"
+                 data-width="600"
+                 data-height="400">
+                 <img src="avata.png" width=300 alt="placeholder">
+            </div>
+        `);
+
+      // 결과를 DOM에 삽입
+      let content = aHtml.join(``);
+      console.log(content);
+      document.getElementById("content").innerHTML = content;
+    </script>
+
+  </body>
+
+</html>
+
+
+<!--
+	1.	템플릿 리터럴 : 문자열을 ``로 감싸고, 변수를 ${변수명} 형태로 삽입.
+	2.	동적으로 HTML : aHtml.push()로 배열에 새로운 문자열을 추가.
+	3.	객체 데이터: data.link['link_board_detail']와 data.link['param_read']는 data 객체에서 동적으로 값을 가져옵니다.
+
+-->
