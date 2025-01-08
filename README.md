@@ -12,6 +12,16 @@
     3. JavaScript : Makes interactive
 - 웹페이지 수정
 
+## What Ia JavaScript Used For?
+
+- DOM (Document Object Model) Manipulation
+- Event Handling
+- Asynchronous Requests
+- Animations & Effects
+- Data manipulation (Sorting, filtering, etc)
+- Storing Data (Cookies, LocalStorage, etc)
+- Single Page Applications (SPA)
+
 ## API
 
 > 개발자가 직접 구현하기 어렵거나 불가능한 기능들을 미리 만들어서 제공하는 프로그램.
