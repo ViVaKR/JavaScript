@@ -21,6 +21,20 @@
 - Data manipulation (Sorting, filtering, etc)
 - Storing Data (Cookies, LocalStorage, etc)
 - Single Page Applications (SPA)
+- Creating APIs & Web Services (Node.js, [Deno](https://deno.com))
+
+## Why Learn JavaScript?
+
+- Popularity
+    - One of the most widly used languages. Many job opportunities
+- Versatility
+    - used for many different thins, such as dynamic web pages, APIs, mobile and even desktop appkications
+- Relatively Easy To Learn
+    - Compared to other lowe level languages, JavaScript is pretty easy to learn and a great language to staft with
+- Community
+    - Great community, support, resources and tools
+
+## Environment
 
 ## API
 
