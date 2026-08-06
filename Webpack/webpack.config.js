@@ -1,16 +1,10 @@
 import path from 'path';
-import autoprefixer from 'autoprefixer';
 import { fileURLToPath } from 'url';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import loader from 'sass-loader';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import TerserPlugin from 'terser-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
-import { server } from 'typescript';
-import { watch } from 'fs';
-import { sourceMapsEnabled } from 'process';
 import webpack from 'webpack';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
